@@ -1,0 +1,2 @@
+# UserManagementSystem
+Django用に新規プロジェクト作成
