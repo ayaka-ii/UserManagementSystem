@@ -32,3 +32,15 @@ services:
       - DB_PORT=5432
     ports:
       - "${DJANGO_PORT}:8000"
+
+  vue:
+    build:
+      context: ./containers/vue/
+      args: 
+       - USERID=${USERID}
+       - GROUPID=${GROUPID}
+    working_dir: /code/vue/
+    ports:
+      - "${VUE_PORT}:5173"
+    volumes:
+      - ./code/vue/:/code/vue/
