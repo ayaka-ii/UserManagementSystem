@@ -36,11 +36,13 @@ services:
   vue:
     build:
       context: ./containers/vue/
-      args: 
-       - USERID=${USERID}
+      args:
+       - USERID=${USERID} 
        - GROUPID=${GROUPID}
-    working_dir: /code/vue/
+    working_dir: /code/vue_vite/UMS/
+      # プロジェクト開始後にプロジェクトのディレクトリに変更
     ports:
-      - "${VUE_PORT}:5173"
+      - "${VUE_PORT}:3000"
+      #コンテナ入ってyarn devでポート確認 
     volumes:
-      - ./code/vue/:/code/vue/
+      - ./code/vue_vite/:/code/vue_vite/
