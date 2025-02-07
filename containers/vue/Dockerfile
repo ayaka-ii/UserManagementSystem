@@ -3,7 +3,7 @@ FROM node:22.13-bookworm
 ARG USERID
 ARG GROUPID
 
-RUN mkdir -p /code/vue_vite/
+RUN mkdir -p /code/vue/
 
 RUN groupadd -f -g ${GROUPID} vuegroup
 
