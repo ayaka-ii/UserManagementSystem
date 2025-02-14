@@ -21,5 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('UserManagement.api.urls')),
+    path('usm/', include('UserManagement.urls')),
 ]
 # アプリフォルダにurls.pyを作成してそのパスを指定。今回はapiフォルダを挟んでいる
