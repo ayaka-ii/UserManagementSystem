@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友枝学園</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">友枝学園</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'user' %}">生徒一覧</a></li>
+                <li><a href="{% url 'user' %}">サークル一覧</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 以下templateの継承用  -->
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

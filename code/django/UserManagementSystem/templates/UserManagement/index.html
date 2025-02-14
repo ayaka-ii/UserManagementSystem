@@ -1,0 +1,7 @@
+<!-- templateの継承 -->
+{% extends "base/base.html" %}
+{% block body %}
+<!-- staticフォルダ読み込み用 -->
+{% load static %}
+<img src="{% static "top.jpg" %}" width="1000" height="500"　>
+{% endblock %}
