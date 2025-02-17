@@ -28,6 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# CROS設定用追記。接続許可URL
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5555",
+]
 
 # Application definition
 
@@ -39,10 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'UserManagement.apps.UsermanagementConfig',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders',
 ]
 
+# 一番上はCROS設定用。一番上に記載したほうがいい
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -136,3 +143,10 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 4,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
 }
+
+# CROS設定
+# 自身以外のオリジンのHTTPリクエスト内にクッキーを含めることを許可する
+CORS_ALLOW_CREDENTIALS = True
+# プリフライト(事前リクエスト)の設定
+# 30分だけ許可
+CORS_PREFLIGHT_MAX_AGE = 60 * 30
